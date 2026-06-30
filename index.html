@@ -42,7 +42,9 @@
       #threejs-container-LOCATION_SPHERE,
       #threejs-container-SILVER_IRIS,
       #threejs-container-ROTATING_DESIGN,
-      #threejs-container-SUSTAINABILITY_DESIGN {
+      #threejs-container-SUSTAINABILITY_DESIGN,
+      #threejs-container-JOURNEY_IRIS,
+      #threejs-container-CONTACT_IRIS {
         position: absolute;
         inset: 0;
         width: 100%;
@@ -1531,6 +1533,7 @@
     </section>
 
     <section class="page-section inner-page" id="journey" aria-label="Hydropower Energy Journey">
+      <div id="threejs-container-JOURNEY_IRIS"></div>
       <div class="section-content">
         <div class="video-shell">
           <h2>Hydropower Energy Journey</h2>
@@ -1545,6 +1548,7 @@
     </section>
 
     <section class="page-section inner-page contact-section" id="contact" aria-label="Contact Us">
+      <div id="threejs-container-CONTACT_IRIS"></div>
       <div class="section-content">
         <div class="contact-panel">
           <h2>Contact Us</h2>
@@ -1930,37 +1934,29 @@
         createGoldenParticleSphere("threejs-container-GOLDEN_SPHERE", aboutSphereOffset);
       });
 
-      initSceneWhenNear("threejs-container-LOCATION_SPHERE", () => {
-        const hydrologySphereOffset = window.innerWidth < 760 ? 0.65 : 7.2;
-        createGoldenParticleSphere("threejs-container-LOCATION_SPHERE", hydrologySphereOffset);
-      });
-
-      function createSilverIrisScene(containerId) {
+      function createSilverIrisScene(containerId, offsetX = 0) {
         const container = document.getElementById(containerId);
         const width = container.clientWidth || window.innerWidth;
         const height = container.clientHeight || window.innerHeight;
+        const isMobileScene = window.innerWidth < 760;
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
         scene.background = new THREE.Color(0x030303);
-        camera.position.set(0, 0.15, 5.2);
+        camera.position.set(isMobileScene ? 0.25 : 0, 0.15, isMobileScene ? 5.8 : 5.2);
         renderer.setSize(width, height);
-        renderer.setPixelRatio(renderPixelRatio);
+        renderer.setPixelRatio(isMobileScene ? 0.85 : 1);
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.35;
-        renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.toneMappingExposure = 1.48;
         container.appendChild(renderer.domElement);
 
-        const ambientLight = new THREE.AmbientLight(0xd8d8d8, 0.14);
+        const ambientLight = new THREE.AmbientLight(0xd8d8d8, isMobileScene ? 0.22 : 0.14);
         scene.add(ambientLight);
 
         const keyLight = new THREE.SpotLight(0xf2f0e8, 3.6, 16, Math.PI / 5, 0.45, 1.3);
         keyLight.position.set(4.5, 5.5, 6);
-        keyLight.castShadow = true;
-        keyLight.shadow.mapSize.set(1024, 1024);
         scene.add(keyLight);
 
         const rimLight = new THREE.DirectionalLight(0xb8b8b8, 1.2);
@@ -1971,8 +1967,8 @@
         sideLight.position.set(-3, 2.4, 3);
         scene.add(sideLight);
 
-        const goldenCoreLight = new THREE.PointLight(0xd49a35, 3.4, 5.5);
-        goldenCoreLight.position.set(0, 0, 1.05);
+        const goldenCoreLight = new THREE.PointLight(0xffb43b, isMobileScene ? 5.8 : 5.2, 7.4);
+        goldenCoreLight.position.set(offsetX, 0, 1.05);
         scene.add(goldenCoreLight);
 
         const floor = new THREE.Mesh(
@@ -1985,6 +1981,8 @@
         scene.add(floor);
 
         const eyeGroup = new THREE.Group();
+        eyeGroup.position.x = offsetX;
+        eyeGroup.scale.setScalar(isMobileScene ? 0.9 : 1);
         scene.add(eyeGroup);
 
         const silverMaterial = new THREE.MeshPhysicalMaterial({
@@ -2038,13 +2036,16 @@
             bevelEnabled: true,
             bevelThickness: depth * 0.45,
             bevelSize: depth * 0.35,
-            bevelSegments: 3,
+            bevelSegments: 1,
           });
         }
 
-        for (let i = 0; i < 30; i += 1) {
-          const phi = Math.acos(-1 + (2 * i) / 30);
-          const theta = Math.sqrt(30 * Math.PI) * phi;
+        const outerPlateCount = isMobileScene ? 18 : 24;
+        const innerPlateCount = isMobileScene ? 28 : 36;
+
+        for (let i = 0; i < outerPlateCount; i += 1) {
+          const phi = Math.acos(-1 + (2 * i) / outerPlateCount);
+          const theta = Math.sqrt(outerPlateCount * Math.PI) * phi;
           const material = i % 3 === 0 ? ironEdgeMaterial : silverMaterial;
           const plate = new THREE.Mesh(createIrregularPlate(0.56, 0.085), material);
 
@@ -2052,50 +2053,46 @@
           plate.lookAt(0, 0, 0);
           plate.rotateZ((Math.random() - 0.5) * 0.7);
           plate.scale.z = 0.8 + Math.random() * 0.45;
-          plate.castShadow = true;
-          plate.receiveShadow = true;
           eyeGroup.add(plate);
         }
 
         const innerGroup = new THREE.Group();
         eyeGroup.add(innerGroup);
 
-        for (let i = 0; i < 50; i += 1) {
-          const phi = Math.acos(-1 + (2 * i) / 50);
-          const theta = Math.sqrt(50 * Math.PI) * phi;
+        for (let i = 0; i < innerPlateCount; i += 1) {
+          const phi = Math.acos(-1 + (2 * i) / innerPlateCount);
+          const theta = Math.sqrt(innerPlateCount * Math.PI) * phi;
           const plate = new THREE.Mesh(createIrregularPlate(0.2, 0.06), darkSilverMaterial);
 
           plate.position.setFromSphericalCoords(1.4, phi, theta);
           plate.lookAt(0, 0, 0);
           plate.rotateZ((Math.random() - 0.5) * 1.1);
-          plate.castShadow = true;
-          plate.receiveShadow = true;
           innerGroup.add(plate);
         }
 
         const pupilMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xffd58a,
-          emissive: 0xd08b2e,
-          emissiveIntensity: 0.78,
+          color: 0xffdc8a,
+          emissive: 0xffa928,
+          emissiveIntensity: 1.15,
           roughness: 0.02,
           transmission: 0.35,
           thickness: 1.1,
           transparent: true,
           opacity: 0.9,
         });
-        const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.55, 48, 48), pupilMaterial);
+        const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.55, isMobileScene ? 28 : 36, isMobileScene ? 28 : 36), pupilMaterial);
         eyeGroup.add(pupil);
 
         const glowMaterial = new THREE.MeshBasicMaterial({
-          color: 0xd49a35,
+          color: 0xffb43b,
           transparent: true,
-          opacity: 0.28,
+          opacity: 0.42,
         });
-        const glow = new THREE.Mesh(new THREE.SphereGeometry(0.8, 32, 32), glowMaterial);
+        const glow = new THREE.Mesh(new THREE.SphereGeometry(1.05, isMobileScene ? 20 : 28, isMobileScene ? 20 : 28), glowMaterial);
         eyeGroup.add(glow);
 
         const irisRing = new THREE.Mesh(
-          new THREE.TorusGeometry(0.88, 0.025, 12, 128),
+          new THREE.TorusGeometry(0.88, 0.025, 8, isMobileScene ? 72 : 96),
           new THREE.MeshPhysicalMaterial({
             color: 0xbdbbb5,
             metalness: 1,
@@ -2104,16 +2101,17 @@
             clearcoatRoughness: 0.18,
           }),
         );
-        irisRing.castShadow = true;
         eyeGroup.add(irisRing);
 
         let targetRotationX = 0;
         let targetRotationY = 0;
 
-        window.addEventListener("mousemove", (event) => {
-          targetRotationY = (event.clientX / window.innerWidth - 0.5) * 0.5;
-          targetRotationX = (event.clientY / window.innerHeight - 0.5) * 0.5;
-        });
+        if (!isMobileScene) {
+          window.addEventListener("mousemove", (event) => {
+            targetRotationY = (event.clientX / window.innerWidth - 0.5) * 0.5;
+            targetRotationX = (event.clientY / window.innerHeight - 0.5) * 0.5;
+          });
+        }
 
         window.addEventListener("resize", () => {
           const newWidth = container.clientWidth || window.innerWidth;
@@ -2125,15 +2123,21 @@
         });
 
         function animateIris(time) {
-          eyeGroup.rotation.y += (targetRotationY - eyeGroup.rotation.y) * 0.05;
-          eyeGroup.rotation.x += (targetRotationX - eyeGroup.rotation.x) * 0.05;
+          if (isMobileScene) {
+            eyeGroup.rotation.y += 0.0012;
+            eyeGroup.rotation.x = Math.sin(time * 0.00045) * 0.08;
+          } else {
+            eyeGroup.rotation.y += (targetRotationY - eyeGroup.rotation.y) * 0.05;
+            eyeGroup.rotation.x += (targetRotationX - eyeGroup.rotation.x) * 0.05;
+          }
+          eyeGroup.position.x = offsetX;
           eyeGroup.position.y = Math.sin(time * 0.001) * 0.1;
 
           const pulse = (Math.sin(time * 0.0025) + 1) / 2;
-          pupilMaterial.emissiveIntensity = 0.55 + pulse * 0.55;
-          glow.scale.setScalar(1 + pulse * 0.28);
-          glowMaterial.opacity = 0.1 + pulse * 0.22;
-          goldenCoreLight.intensity = 2.4 + pulse * 2.2;
+          pupilMaterial.emissiveIntensity = 0.95 + pulse * 0.95;
+          glow.scale.setScalar(1 + pulse * 0.4);
+          glowMaterial.opacity = 0.18 + pulse * 0.38;
+          goldenCoreLight.intensity = (isMobileScene ? 4.2 : 3.6) + pulse * 3.4;
           irisRing.rotation.z += 0.002;
           innerGroup.rotation.z -= 0.0012;
 
@@ -2146,6 +2150,18 @@
 
       initSceneWhenNear("threejs-container-SILVER_IRIS", () => {
         createSilverIrisScene("threejs-container-SILVER_IRIS");
+      });
+
+      initSceneWhenNear("threejs-container-LOCATION_SPHERE", () => {
+        createSilverIrisScene("threejs-container-LOCATION_SPHERE", 0);
+      });
+
+      initSceneWhenNear("threejs-container-JOURNEY_IRIS", () => {
+        createSilverIrisScene("threejs-container-JOURNEY_IRIS", 0);
+      });
+
+      initSceneWhenNear("threejs-container-CONTACT_IRIS", () => {
+        createSilverIrisScene("threejs-container-CONTACT_IRIS", 0);
       });
 
       function createRotatingTurbineScene(containerId) {
