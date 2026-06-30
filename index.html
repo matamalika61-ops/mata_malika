@@ -42,8 +42,7 @@
       #threejs-container-LOCATION_SPHERE,
       #threejs-container-SILVER_IRIS,
       #threejs-container-ROTATING_DESIGN,
-      #threejs-container-SUSTAINABILITY_DESIGN,
-      #threejs-container-VIDEO_SPHERE {
+      #threejs-container-SUSTAINABILITY_DESIGN {
         position: absolute;
         inset: 0;
         width: 100%;
@@ -108,6 +107,7 @@
         display: grid;
         gap: clamp(18px, 3vw, 30px);
         width: min(980px, 100%);
+        perspective: 1200px;
       }
 
       .about-copy {
@@ -174,14 +174,49 @@
 
       .plain-metrics {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px 24px;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: clamp(12px, 1.8vw, 18px);
+        align-items: stretch;
         padding-bottom: 20px;
         border-bottom: 1px solid rgba(255, 248, 223, 0.14);
       }
 
+      .plain-metric {
+        position: relative;
+        min-height: 112px;
+        padding: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(211, 198, 152, 0.22);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(220, 202, 137, 0.16), rgba(138, 137, 128, 0.11) 42%, rgba(0, 0, 0, 0.32)),
+          radial-gradient(circle at 18% 8%, rgba(255, 248, 223, 0.2), transparent 34%),
+          rgba(16, 15, 13, 0.42);
+        box-shadow:
+          0 18px 44px rgba(0, 0, 0, 0.36),
+          inset 0 1px 0 rgba(255, 248, 223, 0.22),
+          inset 0 -18px 42px rgba(151, 133, 74, 0.12);
+        backdrop-filter: blur(14px) saturate(130%);
+      }
+
+      .plain-metric::before,
+      .technical-column::before,
+      .site-footer::before,
+      .contact-card::before {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background:
+          linear-gradient(115deg, transparent 0 28%, rgba(255, 248, 223, 0.14) 42%, transparent 57%),
+          repeating-linear-gradient(160deg, rgba(207, 190, 129, 0.08) 0 1px, transparent 1px 14px);
+        opacity: 0.62;
+        mix-blend-mode: screen;
+      }
+
       .plain-metric strong,
       .plain-metric span {
+        position: relative;
         display: block;
         font-family:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -264,6 +299,24 @@
           sans-serif;
       }
 
+      .technical-column {
+        position: relative;
+        min-height: 100%;
+        padding: clamp(18px, 2.4vw, 24px);
+        overflow: hidden;
+        border: 1px solid rgba(211, 198, 152, 0.2);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(220, 202, 137, 0.13), rgba(143, 141, 132, 0.08) 46%, rgba(0, 0, 0, 0.36)),
+          radial-gradient(circle at 16% 0%, rgba(255, 248, 223, 0.18), transparent 32%),
+          rgba(17, 16, 14, 0.38);
+        box-shadow:
+          0 22px 54px rgba(0, 0, 0, 0.34),
+          inset 0 1px 0 rgba(255, 248, 223, 0.2),
+          inset 0 -28px 54px rgba(151, 133, 74, 0.1);
+        backdrop-filter: blur(14px) saturate(130%);
+      }
+
       .technical-summary {
         max-width: 78ch;
         padding-bottom: 20px;
@@ -292,6 +345,7 @@
       }
 
       .technical-column h3 {
+        position: relative;
         margin: 0 0 18px;
         font-family:
           Baik, "Bodoni 72", Didot, "Bodoni MT", "Baskerville Display PT",
@@ -303,6 +357,7 @@
       }
 
       .technical-column ul {
+        position: relative;
         display: grid;
         gap: 14px;
         margin: 0;
@@ -321,8 +376,17 @@
         display: grid;
         gap: 18px;
         width: min(980px, 100%);
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 248, 223, 0.14);
+        padding: clamp(18px, 3vw, 28px);
+        overflow: hidden;
+        border: 1px solid rgba(211, 198, 152, 0.2);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(220, 202, 137, 0.12), rgba(143, 141, 132, 0.08) 45%, rgba(0, 0, 0, 0.38)),
+          rgba(17, 16, 14, 0.42);
+        box-shadow:
+          0 24px 70px rgba(0, 0, 0, 0.42),
+          inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(14px) saturate(130%);
         font-family:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
@@ -343,6 +407,7 @@
       .about-copy h2,
       .technical-summary h2,
       .video-shell h2,
+      .contact-panel h2,
       .plain-group h3,
       .technical-column h3 {
         background:
@@ -367,14 +432,285 @@
 
       .journey-video {
         display: block;
-        width: min(100%, 920px);
+        width: 100%;
         aspect-ratio: 16 / 9;
-        border: 1px solid rgba(255, 248, 223, 0.16);
+        border: 1px solid rgba(211, 198, 152, 0.22);
         border-radius: 8px;
         background: #000;
         box-shadow:
-          18px 22px 0 rgba(0, 0, 0, 0.38),
-          0 28px 72px rgba(0, 0, 0, 0.45);
+          0 22px 64px rgba(0, 0, 0, 0.48),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+
+      #journey {
+        background:
+          radial-gradient(circle at 82% 18%, rgba(188, 226, 241, 0.16), transparent 26%),
+          radial-gradient(circle at 18% 82%, rgba(212, 175, 55, 0.08), transparent 26%),
+          linear-gradient(145deg, #020506, #060b0d 48%, #000);
+      }
+
+      .contact-section {
+        min-height: 78vh;
+        background:
+          radial-gradient(circle at 76% 24%, rgba(188, 226, 241, 0.18), transparent 28%),
+          radial-gradient(circle at 24% 78%, rgba(212, 175, 55, 0.12), transparent 28%),
+          linear-gradient(150deg, #020506, #050d11 45%, #000);
+      }
+
+      .contact-section::after {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        content: "";
+        background:
+          repeating-linear-gradient(120deg, rgba(160, 220, 238, 0.055) 0 1px, transparent 1px 26px),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.68));
+      }
+
+      .contact-panel {
+        display: grid;
+        gap: clamp(18px, 3vw, 28px);
+        width: min(980px, 100%);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      .contact-panel h2 {
+        margin: 0;
+        font-family:
+          Baik, "Bodoni 72", Didot, "Bodoni MT", "Baskerville Display PT",
+          "Playfair Display", Georgia, serif;
+        font-size: clamp(2.35rem, 5vw, 5.5rem);
+        font-weight: 850;
+        line-height: 0.88;
+        letter-spacing: 0;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(14px, 2vw, 20px);
+      }
+
+      .contact-map {
+        position: relative;
+        min-height: 280px;
+        overflow: hidden;
+        border: 1px solid rgba(211, 198, 152, 0.2);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 42% 48%, rgba(242, 217, 135, 0.26), transparent 0 9px, transparent 10px),
+          linear-gradient(35deg, transparent 0 38%, rgba(170, 220, 235, 0.22) 39% 41%, transparent 42%),
+          linear-gradient(135deg, transparent 0 58%, rgba(242, 217, 135, 0.14) 59% 61%, transparent 62%),
+          repeating-linear-gradient(90deg, rgba(214, 236, 255, 0.06) 0 1px, transparent 1px 36px),
+          repeating-linear-gradient(0deg, rgba(214, 236, 255, 0.06) 0 1px, transparent 1px 36px),
+          linear-gradient(145deg, rgba(191, 230, 255, 0.12), rgba(0, 0, 0, 0.46));
+        box-shadow:
+          0 24px 68px rgba(0, 0, 0, 0.42),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          inset 0 -28px 56px rgba(24, 96, 124, 0.12);
+        backdrop-filter: blur(14px) saturate(130%);
+      }
+
+      .contact-map::before {
+        position: absolute;
+        top: 50%;
+        left: 42%;
+        width: 22px;
+        height: 22px;
+        content: "";
+        border: 2px solid rgba(255, 248, 223, 0.9);
+        border-radius: 50% 50% 50% 0;
+        background: rgba(194, 153, 28, 0.86);
+        box-shadow:
+          0 0 0 8px rgba(242, 217, 135, 0.12),
+          0 0 38px rgba(242, 217, 135, 0.42);
+        transform: translate(-50%, -70%) rotate(-45deg);
+      }
+
+      .contact-map::after {
+        position: absolute;
+        right: 20px;
+        bottom: 18px;
+        left: 20px;
+        padding: 16px;
+        content: "Project Location: Thalara, Bajhang District, Nepal";
+        border: 1px solid rgba(255, 248, 223, 0.12);
+        border-radius: 8px;
+        color: rgba(255, 248, 223, 0.84);
+        background: rgba(0, 0, 0, 0.42);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        line-height: 1.45;
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-card {
+        position: relative;
+        min-height: 132px;
+        padding: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(214, 236, 255, 0.18);
+        border-radius: 8px;
+        background:
+          linear-gradient(140deg, rgba(220, 202, 137, 0.14), rgba(139, 138, 130, 0.09) 48%, rgba(0, 0, 0, 0.36)),
+          rgba(17, 16, 14, 0.42);
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.42),
+          inset 0 1px 0 rgba(255, 248, 223, 0.22),
+          inset 0 -24px 56px rgba(151, 133, 74, 0.12);
+        backdrop-filter: blur(14px) saturate(130%);
+      }
+
+      .plain-metric,
+      .technical-column,
+      .contact-card,
+      .gallery-item,
+      .video-shell,
+      .contact-map,
+      .site-footer,
+      .highlight-item,
+      .hero-button,
+      .nav-links a {
+        transform-style: preserve-3d;
+        will-change: transform;
+      }
+
+      .plain-metric,
+      .technical-column,
+      .contact-card,
+      .gallery-item,
+      .video-shell,
+      .site-footer,
+      .contact-map {
+        animation: floatTilt 7s ease-in-out infinite;
+        transform: perspective(1100px) rotateX(3deg) rotateY(-3deg) skewX(-0.8deg) translateZ(0);
+        transition:
+          transform 260ms ease,
+          border-color 260ms ease,
+          box-shadow 260ms ease,
+          background 260ms ease;
+      }
+
+      .plain-metric {
+        animation: none;
+        transform: perspective(1100px) rotateX(3deg) rotateY(-3deg) skewX(-0.8deg) translateZ(0);
+      }
+
+      .plain-metric {
+        grid-column: span 2;
+      }
+
+      .plain-metrics:has(.plain-metric:nth-child(5):last-child) .plain-metric:nth-last-child(-n+2),
+      .plain-metrics:has(.plain-metric:nth-child(8):last-child) .plain-metric:nth-last-child(-n+2) {
+        grid-column: span 3;
+      }
+
+      .plain-metric:nth-child(2n),
+      .technical-column:nth-child(2n),
+      .contact-card:nth-child(2n),
+      .gallery-item:nth-child(2n) {
+        animation-delay: -2.2s;
+        transform: perspective(1100px) rotateX(2deg) rotateY(3deg) skewX(0.8deg) translateZ(0);
+      }
+
+      .plain-metric:nth-child(3n),
+      .technical-column:nth-child(3n),
+      .contact-card:nth-child(3n),
+      .gallery-item:nth-child(3n) {
+        animation-delay: -4.4s;
+      }
+
+      .plain-metric:hover,
+      .technical-column:hover,
+      .contact-card:hover,
+      .gallery-item:hover,
+      .video-shell:hover,
+      .site-footer:hover,
+      .contact-map:hover {
+        border-color: rgba(235, 214, 142, 0.36);
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.46),
+          0 0 36px rgba(212, 175, 55, 0.14),
+          inset 0 1px 0 rgba(255, 248, 223, 0.26),
+          inset 0 -24px 56px rgba(151, 133, 74, 0.14);
+        transform: perspective(1100px) rotateX(0deg) rotateY(-7deg) skewX(-1.4deg) translateY(-8px) translateZ(28px);
+      }
+
+      .hero-button,
+      .nav-links a {
+        transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0);
+      }
+
+      @keyframes floatTilt {
+        0%,
+        100% {
+          transform: perspective(1100px) rotateX(3deg) rotateY(-3deg) skewX(-0.8deg) translateY(0) translateZ(0);
+        }
+
+        50% {
+          transform: perspective(1100px) rotateX(5deg) rotateY(3deg) skewX(0.7deg) translateY(-9px) translateZ(14px);
+        }
+      }
+
+      .contact-card span,
+      .contact-card strong,
+      .contact-card a,
+      .site-footer,
+      .developer-credit {
+        position: relative;
+        display: block;
+      }
+
+      .contact-card span {
+        color: rgba(255, 248, 223, 0.62);
+        font-size: 0.78rem;
+        font-weight: 840;
+        text-transform: uppercase;
+      }
+
+      .contact-card strong,
+      .contact-card a {
+        margin-top: 14px;
+        color: rgba(255, 248, 223, 0.9);
+        font-size: clamp(1rem, 1.8vw, 1.25rem);
+        font-weight: 780;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+
+      .site-footer {
+        display: grid;
+        gap: 8px;
+        padding: 18px 20px;
+        overflow: hidden;
+        border: 1px solid rgba(211, 198, 152, 0.2);
+        border-radius: 8px;
+        background:
+          linear-gradient(140deg, rgba(220, 202, 137, 0.13), rgba(139, 138, 130, 0.08) 48%, rgba(0, 0, 0, 0.34)),
+          rgba(17, 16, 14, 0.38);
+        box-shadow:
+          0 18px 48px rgba(0, 0, 0, 0.34),
+          inset 0 1px 0 rgba(255, 248, 223, 0.2),
+          inset 0 -18px 42px rgba(151, 133, 74, 0.1);
+        backdrop-filter: blur(14px) saturate(130%);
+      }
+
+      .copyright-line,
+      .developer-credit {
+        margin: 0;
+        color: rgba(255, 248, 223, 0.68);
+        font-size: 0.9rem;
+        letter-spacing: 0;
+      }
+
+      .copyright-line strong,
+      .developer-credit strong {
+        color: rgba(242, 217, 135, 0.92);
       }
 
       .hero-title {
@@ -538,23 +874,27 @@
       }
 
       .hero-button.primary {
-        border: 1px solid rgba(240, 207, 98, 0.92);
+        border: 1px solid rgba(235, 214, 142, 0.78);
         color: #11140d;
-        background: #f0cf62;
-        box-shadow: 0 14px 32px rgba(212, 175, 55, 0.22);
+        background: linear-gradient(135deg, #e7d279, #8d887c);
+        box-shadow:
+          0 14px 32px rgba(212, 175, 55, 0.18),
+          inset 0 1px 0 rgba(255, 248, 223, 0.48);
       }
 
       .hero-button.secondary {
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(211, 198, 152, 0.28);
         color: #fff8df;
-        background: rgba(255, 255, 255, 0.08);
+        background:
+          linear-gradient(135deg, rgba(220, 202, 137, 0.15), rgba(137, 136, 128, 0.13)),
+          rgba(0, 0, 0, 0.22);
         backdrop-filter: blur(14px);
       }
 
       .hero-button:hover,
       .hero-button:focus-visible {
         outline: none;
-        transform: translateY(-2px);
+        transform: perspective(800px) rotateX(8deg) rotateY(-8deg) skewX(-2deg) translateY(-5px) translateZ(18px);
       }
 
       .project-highlights {
@@ -586,15 +926,17 @@
         min-height: 118px;
         padding: 20px;
         overflow: hidden;
-        border: 1px solid rgba(255, 248, 223, 0.16);
+        border: 1px solid rgba(211, 198, 152, 0.2);
         border-radius: 8px;
         background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(22, 22, 22, 0.86) 42%, rgba(0, 0, 0, 0.94) 100%);
+          linear-gradient(145deg, rgba(220, 202, 137, 0.16) 0%, rgba(73, 72, 67, 0.42) 44%, rgba(0, 0, 0, 0.72) 100%),
+          radial-gradient(circle at 16% 0%, rgba(255, 248, 223, 0.16), transparent 38%);
         box-shadow:
           0 22px 34px rgba(0, 0, 0, 0.5),
-          0 0 22px rgba(255, 248, 223, 0.06),
-          inset 0 1px 0 rgba(255, 248, 223, 0.18),
-          inset 0 -20px 34px rgba(0, 0, 0, 0.48);
+          0 0 22px rgba(212, 175, 55, 0.08),
+          inset 0 1px 0 rgba(255, 248, 223, 0.22),
+          inset 0 -20px 34px rgba(151, 133, 74, 0.14);
+        backdrop-filter: blur(14px) saturate(130%);
         font-family:
           Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
@@ -608,8 +950,9 @@
         pointer-events: none;
         content: "";
         background:
-          linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent),
-          radial-gradient(circle at 20% 0%, rgba(255, 248, 223, 0.13), transparent 42%);
+          linear-gradient(90deg, transparent, rgba(255, 248, 223, 0.14), transparent),
+          repeating-linear-gradient(160deg, rgba(207, 190, 129, 0.08) 0 1px, transparent 1px 12px),
+          radial-gradient(circle at 20% 0%, rgba(255, 248, 223, 0.1), transparent 42%);
         opacity: 0.68;
       }
 
@@ -766,7 +1109,18 @@
         text-shadow:
           0 2px 14px rgba(0, 0, 0, 0.9),
           0 0 22px rgba(255, 255, 255, 0.52);
-        transform: translateY(-2px);
+        transform: perspective(800px) rotateX(12deg) rotateY(-8deg) skewX(-2deg) translateY(-4px) translateZ(16px);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .plain-metric,
+        .technical-column,
+        .contact-card,
+        .gallery-item,
+        .video-shell,
+        .contact-map {
+          animation: none;
+        }
       }
 
       @media (max-width: 680px) {
@@ -813,6 +1167,16 @@
           font-size: 0.84rem;
         }
 
+        .plain-metrics {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .plain-metric,
+        .plain-metrics:has(.plain-metric:nth-child(5):last-child) .plain-metric:nth-last-child(-n+2),
+        .plain-metrics:has(.plain-metric:nth-child(8):last-child) .plain-metric:nth-last-child(-n+2) {
+          grid-column: auto;
+        }
+
         .project-highlights {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -823,6 +1187,10 @@
         }
 
         .technical-table {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-grid {
           grid-template-columns: 1fr;
         }
 
@@ -855,6 +1223,10 @@
           width: min(100%, 320px);
         }
 
+        .plain-metrics {
+          grid-template-columns: 1fr;
+        }
+
         .project-highlights {
           grid-template-columns: 1fr;
         }
@@ -871,11 +1243,10 @@
       <div class="nav-links">
         <a href="#home"><span>Home</span></a>
         <a href="#about"><span>Project</span></a>
-        <a href="#location"><span>Hydrology</span></a>
         <a href="#technical"><span>Infrastructure</span></a>
         <a href="#sustainability"><span>Sustainability</span></a>
         <a href="#gallery"><span>Gallery</span></a>
-        <a href="#journey"><span>Journey</span></a>
+        <a href="#contact"><span>Contact</span></a>
       </div>
     </nav>
 
@@ -900,7 +1271,6 @@
         </div>
         <div class="hero-actions" aria-label="Project actions">
           <a class="hero-button primary" href="#about">View Project Details</a>
-          <a class="hero-button secondary" href="#technical">Explore Salient Features</a>
         </div>
       </div>
       <div class="project-highlights" aria-label="Key Project Highlights">
@@ -1116,7 +1486,6 @@
     </section>
 
     <section class="page-section inner-page" id="journey" aria-label="Hydropower Energy Journey">
-      <div id="threejs-container-VIDEO_SPHERE"></div>
       <div class="section-content">
         <div class="video-shell">
           <h2>Hydropower Energy Journey</h2>
@@ -1126,6 +1495,33 @@
           <video class="journey-video" controls preload="metadata" playsinline>
             <source src="assets/hydropower-energy-journey.mp4" type="video/mp4" />
           </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section inner-page contact-section" id="contact" aria-label="Contact Us">
+      <div class="section-content">
+        <div class="contact-panel">
+          <h2>Contact Us</h2>
+          <div class="contact-grid" aria-label="Contact details">
+            <div class="contact-card">
+              <span>Phone</span>
+              <a href="tel:9851089120">9851089120</a>
+            </div>
+            <div class="contact-card">
+              <span>Email</span>
+              <a href="mailto:matamalika61@gmail.com">matamalika61@GMAIL.COM</a>
+            </div>
+            <div class="contact-card">
+              <span>Location</span>
+              <strong>Thalara, Bajhang District, Nepal</strong>
+            </div>
+          </div>
+          <div class="contact-map" aria-label="Map showing project location in Thalara, Bajhang District, Nepal"></div>
+          <footer class="site-footer" aria-label="Site copyright and credits">
+            <p class="copyright-line">Copyright © 2026 <strong>Mata Malika Energy Multiple Private Limited</strong>. All rights reserved.</p>
+            <p class="developer-credit">Developed by <strong>Niraj Pandey</strong></p>
+          </footer>
         </div>
       </div>
     </section>
@@ -1488,10 +1884,6 @@
       initSceneWhenNear("threejs-container-LOCATION_SPHERE", () => {
         const hydrologySphereOffset = window.innerWidth < 760 ? 3.4 : 7.2;
         createGoldenParticleSphere("threejs-container-LOCATION_SPHERE", hydrologySphereOffset);
-      });
-
-      initSceneWhenNear("threejs-container-VIDEO_SPHERE", () => {
-        createGoldenParticleSphere("threejs-container-VIDEO_SPHERE", window.innerWidth < 760 ? 3.4 : 6.2);
       });
 
       function createSilverIrisScene(containerId) {
