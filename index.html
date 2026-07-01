@@ -2119,65 +2119,91 @@
         }
       }
 
-      body.home-active .liquid-navbar {
-        animation: landingNavFloat 5.5s ease-in-out infinite;
+      body.home-active .nav-links a {
+        animation: landingButtonFloat 5.2s ease-in-out infinite;
       }
 
-      body:not(.home-active) .liquid-navbar {
+      body.home-active .nav-links a:nth-child(2) {
+        animation-duration: 6.1s;
+        animation-delay: -1.4s;
+      }
+
+      body.home-active .nav-links a:nth-child(3) {
+        animation-duration: 5.7s;
+        animation-delay: -2.6s;
+      }
+
+      body.home-active .nav-links a:nth-child(4) {
+        animation-duration: 6.6s;
+        animation-delay: -0.8s;
+      }
+
+      body.home-active .nav-links a:nth-child(5) {
+        animation-duration: 5.4s;
+        animation-delay: -3.2s;
+      }
+
+      body.home-active .nav-links a:nth-child(6) {
+        animation-duration: 6.9s;
+        animation-delay: -2s;
+      }
+
+      body:not(.home-active) .nav-links a {
         animation: none;
       }
 
-      @keyframes landingNavFloat {
+      @keyframes landingButtonFloat {
         0%,
         100% {
-          transform: translateX(-50%) translateY(0) rotateX(0deg);
+          transform: perspective(800px) rotateX(4deg) rotateY(-3deg) translateY(0) translateZ(0);
         }
 
         50% {
-          transform: translateX(-50%) translateY(-12px) rotateX(5deg);
+          transform: perspective(800px) rotateX(9deg) rotateY(5deg) translateY(-14px) translateZ(18px);
         }
       }
 
       .nav-links a {
-        min-height: clamp(58px, 5vw, 86px);
-        padding: 0 clamp(24px, 2.7vw, 46px);
-        font-size: clamp(1.55rem, 2.15vw, 2.7rem);
+        min-height: clamp(44px, 4.2vw, 58px);
+        padding: 0 clamp(16px, 2vw, 28px);
+        font-size: clamp(0.98rem, 1.35vw, 1.35rem);
         font-weight: 900;
         white-space: nowrap;
       }
 
       #home {
-        min-height: max(100vh, 2100px);
+        min-height: max(100vh, 1380px);
       }
 
       #home .landing-info {
-        top: clamp(560px, 62vh, 720px);
-        width: min(1180px, calc(100% - 112px));
+        top: clamp(300px, 36vh, 400px);
+        left: clamp(28px, 4.8vw, 80px);
+        width: min(760px, calc(100% - 96px));
       }
 
       #home .landing-info h2 {
-        max-width: 14ch;
-        font-size: clamp(5.8rem, 10.5vw, 12.8rem);
+        max-width: 15ch;
+        font-size: clamp(3.2rem, 5.2vw, 5.7rem);
         font-weight: 900;
-        line-height: 0.95;
+        line-height: 1.03;
       }
 
       #home .landing-info p {
-        max-width: 58ch;
-        font-size: clamp(2.1rem, 3.8vw, 4.7rem);
+        max-width: 52ch;
+        font-size: clamp(1.2rem, 1.8vw, 1.9rem);
         font-weight: 900;
-        line-height: 1.22;
+        line-height: 1.44;
       }
 
       #home .project-highlights {
-        top: clamp(1380px, 146vh, 1560px);
-        grid-template-columns: repeat(2, minmax(340px, 1fr));
-        gap: clamp(22px, 2.4vw, 42px);
+        top: clamp(900px, 96vh, 980px);
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        gap: clamp(18px, 2vw, 28px);
       }
 
       #home .highlight-item {
-        min-height: 270px;
-        padding: clamp(26px, 3vw, 44px);
+        min-height: 200px;
+        padding: clamp(20px, 2.4vw, 32px);
       }
 
       .about-copy h2,
@@ -2187,9 +2213,9 @@
       .contact-panel h2,
       .technical-column h3 {
         max-width: 18ch;
-        font-size: clamp(4.8rem, 8.6vw, 10.5rem);
+        font-size: clamp(3.3rem, 6vw, 6.6rem);
         font-weight: 900;
-        line-height: 0.98;
+        line-height: 1;
       }
 
       .landing-info h2,
@@ -2216,15 +2242,15 @@
       .technical-summary p,
       .video-shell p {
         max-width: 68ch;
-        font-size: clamp(2.1rem, 3.8vw, 4.6rem);
+        font-size: clamp(1.45rem, 2.4vw, 2.8rem);
         font-weight: 900;
-        line-height: 1.24;
+        line-height: 1.36;
       }
 
       .plain-metric strong,
       .highlight-value,
       .contact-card strong {
-        font-size: clamp(3.7rem, 6.8vw, 7.8rem);
+        font-size: clamp(2.3rem, 4.5vw, 4.8rem);
       }
 
       .plain-metric span,
@@ -2234,9 +2260,9 @@
       .detail-list li,
       .gallery-item figcaption,
       .copyright-line {
-        font-size: clamp(2rem, 3.5vw, 3.8rem);
+        font-size: clamp(1.25rem, 2.1vw, 2.15rem);
         font-weight: 900;
-        line-height: 1.2;
+        line-height: 1.28;
       }
 
       .plain-metric,
@@ -2253,41 +2279,41 @@
         }
 
         #home {
-          min-height: 2460px;
+          min-height: 1680px;
         }
 
         #home .landing-info {
-          top: 560px;
+          top: 360px;
           width: calc(100% - 42px);
         }
 
         #home .landing-info h2 {
-          font-size: clamp(4rem, 13vw, 7rem);
+          font-size: clamp(2.8rem, 8vw, 4.6rem);
         }
 
         #home .landing-info p {
-          font-size: clamp(1.7rem, 6.2vw, 2.8rem);
+          font-size: clamp(1.12rem, 3.8vw, 1.7rem);
         }
 
         #home .project-highlights {
-          top: 1480px;
+          top: 900px;
           grid-template-columns: 1fr;
         }
       }
 
       @media (max-width: 560px) {
         #home {
-          min-height: 2860px;
+          min-height: 2020px;
         }
 
         #home .landing-info {
-          top: 530px;
+          top: 330px;
           left: 16px;
           width: calc(100% - 32px);
         }
 
         #home .project-highlights {
-          top: 1420px;
+          top: 890px;
         }
 
         .about-copy h2,
@@ -2296,7 +2322,189 @@
         .video-shell h2,
         .contact-panel h2,
         .technical-column h3 {
-          font-size: clamp(3.1rem, 14vw, 4.8rem);
+          font-size: clamp(2.6rem, 11vw, 4rem);
+        }
+      }
+
+      body.home-active .liquid-navbar {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        pointer-events: none;
+        transform: none;
+      }
+
+      body.home-active .nav-links {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      body.home-active .nav-links a {
+        position: absolute;
+        pointer-events: auto;
+        animation-name: landingButtonOrbit;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        border-radius: 48% 52% 46% 54% / 55% 44% 56% 45%;
+      }
+
+      body.home-active .nav-links a:nth-child(1) {
+        top: 5%;
+        left: 6%;
+        animation-duration: 7.2s;
+        --float-x: 28vw;
+        --float-y: 18vh;
+      }
+
+      body.home-active .nav-links a:nth-child(2) {
+        top: 7%;
+        right: 10%;
+        animation-duration: 8.4s;
+        animation-delay: -2.1s;
+        --float-x: -34vw;
+        --float-y: 24vh;
+      }
+
+      body.home-active .nav-links a:nth-child(3) {
+        top: 32%;
+        left: 4%;
+        animation-duration: 9.1s;
+        animation-delay: -3.4s;
+        --float-x: 38vw;
+        --float-y: -18vh;
+      }
+
+      body.home-active .nav-links a:nth-child(4) {
+        top: 36%;
+        right: 5%;
+        animation-duration: 8.8s;
+        animation-delay: -1.2s;
+        --float-x: -32vw;
+        --float-y: 20vh;
+      }
+
+      body.home-active .nav-links a:nth-child(5) {
+        bottom: 18%;
+        left: 12%;
+        animation-duration: 7.8s;
+        animation-delay: -4.2s;
+        --float-x: 34vw;
+        --float-y: -16vh;
+      }
+
+      body.home-active .nav-links a:nth-child(6) {
+        bottom: 16%;
+        right: 12%;
+        animation-duration: 9.6s;
+        animation-delay: -2.7s;
+        --float-x: -36vw;
+        --float-y: -22vh;
+      }
+
+      @keyframes landingButtonOrbit {
+        0% {
+          border-radius: 46% 54% 43% 57% / 58% 42% 56% 44%;
+          transform: perspective(900px) rotateX(6deg) rotateY(-5deg) translate3d(0, 0, 0) scale(1);
+        }
+
+        45% {
+          border-radius: 58% 42% 61% 39% / 42% 60% 40% 58%;
+          transform: perspective(900px) rotateX(11deg) rotateY(6deg) translate3d(calc(var(--float-x) * 0.55), calc(var(--float-y) * 0.6), 22px) scale(1.06);
+        }
+
+        100% {
+          border-radius: 54% 46% 41% 59% / 45% 57% 43% 55%;
+          transform: perspective(900px) rotateX(12deg) rotateY(8deg) translate3d(var(--float-x), var(--float-y), 34px) scale(0.97);
+        }
+      }
+
+      #home .landing-info {
+        top: clamp(86px, 11vh, 132px);
+        width: min(720px, calc(100% - 124px));
+      }
+
+      #home .landing-info p {
+        max-width: 38ch;
+      }
+
+      #home .project-highlights {
+        top: clamp(700px, 74vh, 780px);
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+      }
+
+      #home .highlight-item:nth-child(n + 4) {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        body.home-active .nav-links a:nth-child(1) {
+          top: 3%;
+          left: 5%;
+          --float-x: 36vw;
+          --float-y: 14vh;
+        }
+
+        body.home-active .nav-links a:nth-child(2) {
+          top: 9%;
+          right: 5%;
+          --float-x: -32vw;
+          --float-y: 18vh;
+        }
+
+        body.home-active .nav-links a:nth-child(3) {
+          top: 28%;
+          left: 5%;
+          --float-x: 26vw;
+          --float-y: -14vh;
+        }
+
+        body.home-active .nav-links a:nth-child(4) {
+          top: 34%;
+          right: 5%;
+          --float-x: -24vw;
+          --float-y: 16vh;
+        }
+
+        body.home-active .nav-links a:nth-child(5) {
+          bottom: 22%;
+          left: 7%;
+          --float-x: 28vw;
+          --float-y: -12vh;
+        }
+
+        body.home-active .nav-links a:nth-child(6) {
+          bottom: 18%;
+          right: 7%;
+          --float-x: -26vw;
+          --float-y: -14vh;
+        }
+
+        #home .landing-info {
+          top: 150px;
+          width: calc(100% - 52px);
+        }
+
+        #home .project-highlights {
+          top: 760px;
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        body.home-active .liquid-navbar {
+          height: 72vh;
+        }
+
+        #home .landing-info {
+          top: 180px;
+        }
+
+        #home .project-highlights {
+          top: 820px;
         }
       }
 
@@ -3487,14 +3695,21 @@
           return;
         }
 
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            document.body.classList.toggle("home-active", entry.isIntersecting);
-          },
-          { threshold: 0.34 },
-        );
+        function updateActiveSection() {
+          if (window.location.hash && window.location.hash !== "#home") {
+            document.body.classList.remove("home-active");
+            return;
+          }
 
-        observer.observe(home);
+          const rect = home.getBoundingClientRect();
+          const onHome = rect.top < window.innerHeight * 0.72 && rect.bottom > window.innerHeight * 0.28;
+          document.body.classList.toggle("home-active", onHome);
+        }
+
+        updateActiveSection();
+        window.addEventListener("scroll", updateActiveSection, { passive: true });
+        window.addEventListener("hashchange", updateActiveSection);
+        window.addEventListener("resize", updateActiveSection);
       })();
     </script>
   </body>
