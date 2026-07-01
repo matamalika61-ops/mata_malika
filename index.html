@@ -1283,6 +1283,393 @@
           min-height: 92px;
         }
       }
+
+      /* White metallic theme override */
+      html,
+      body {
+        background: #d7d7d3;
+      }
+
+      body {
+        color: #201e18;
+      }
+
+      .page-section#home {
+        min-height: max(100vh, 760px);
+      }
+
+      .page-section {
+        background:
+          radial-gradient(circle at 78% 18%, rgba(212, 175, 55, 0.22), transparent 30%),
+          radial-gradient(circle at 18% 82%, rgba(80, 84, 96, 0.18), transparent 32%),
+          linear-gradient(145deg, #eeeeeb 0%, #ddddda 48%, #c9c9c3 100%);
+      }
+
+      #threejs-container-ANIMATION_2,
+      #threejs-container-GOLDEN_SPHERE,
+      #threejs-container-LOCATION_SPHERE,
+      #threejs-container-SILVER_IRIS,
+      #threejs-container-ROTATING_DESIGN,
+      #threejs-container-SUSTAINABILITY_DESIGN,
+      #threejs-container-JOURNEY_IRIS,
+      #threejs-container-CONTACT_IRIS {
+        background:
+          radial-gradient(circle at 55% 44%, rgba(218, 174, 34, 0.22), transparent 32%),
+          radial-gradient(circle at 28% 68%, rgba(40, 96, 190, 0.12), transparent 34%),
+          linear-gradient(145deg, #eeeeeb, #ddddda 52%, #c8c8c1);
+      }
+
+      #threejs-container-ANIMATION_2 canvas,
+      #threejs-container-GOLDEN_SPHERE canvas,
+      #threejs-container-LOCATION_SPHERE canvas,
+      #threejs-container-SILVER_IRIS canvas,
+      #threejs-container-ROTATING_DESIGN canvas,
+      #threejs-container-SUSTAINABILITY_DESIGN canvas,
+      #threejs-container-JOURNEY_IRIS canvas,
+      #threejs-container-CONTACT_IRIS canvas {
+        filter:
+          drop-shadow(0 22px 46px rgba(123, 105, 53, 0.2))
+          drop-shadow(0 0 28px rgba(0, 109, 255, 0.13))
+          contrast(1.12)
+          saturate(1.38);
+      }
+
+      .inner-page::before {
+        background:
+          radial-gradient(circle at 50% 46%, transparent 0 34%, rgba(255, 255, 255, 0.34) 58%, rgba(246, 243, 234, 0.78) 100%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.18) 45%, rgba(238, 232, 218, 0.62));
+      }
+
+      .section-content,
+      .hero-title {
+        color: #211f1a;
+      }
+
+      .about-copy,
+      .plain-group,
+      .plain-metrics,
+      .technical-table,
+      .technical-summary,
+      .video-shell {
+        border-color: rgba(86, 78, 54, 0.16);
+      }
+
+      .about-copy p,
+      .plain-group p,
+      .technical-summary p,
+      .video-shell p,
+      .technical-column li,
+      .plain-metric span,
+      .detail-list li,
+      .gallery-item figcaption,
+      .copyright-line,
+      .developer-credit {
+        color: rgba(35, 32, 25, 0.78);
+      }
+
+      .about-copy strong,
+      .plain-metric strong,
+      .developer-credit strong,
+      .copyright-line strong {
+        color: #9d741c;
+      }
+
+      .hero-title::before {
+        border-color: rgba(150, 132, 74, 0.22);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(246, 242, 231, 0.72) 54%, rgba(210, 193, 132, 0.22)),
+          radial-gradient(circle at 13% 0%, rgba(212, 175, 55, 0.2), transparent 36%);
+        box-shadow:
+          16px 22px 0 rgba(152, 135, 87, 0.12),
+          0 34px 90px rgba(93, 85, 63, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.86),
+          inset -20px -28px 48px rgba(193, 180, 145, 0.24);
+      }
+
+      .hero-title::after {
+        background: rgba(143, 126, 76, 0.24);
+      }
+
+      .hero-title .project-kicker,
+      .hero-title .project-summary,
+      .hero-title .project-meta,
+      .location-list span {
+        color: rgba(33, 30, 23, 0.82);
+        text-shadow: none;
+      }
+
+      .hero-title .project-capacity,
+      .highlight-value {
+        color: #27231a;
+      }
+
+      .project-meta strong {
+        color: #9d741c;
+      }
+
+      .location-list span {
+        border-color: rgba(150, 132, 74, 0.2);
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .plain-metric,
+      .technical-column,
+      .contact-card,
+      .gallery-item,
+      .video-shell,
+      .site-footer,
+      .contact-map,
+      .highlight-item {
+        border-color: rgba(150, 132, 74, 0.24);
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(235, 229, 213, 0.48) 48%, rgba(207, 190, 129, 0.2)),
+          radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 0.72), transparent 34%);
+        box-shadow:
+          12px 18px 0 rgba(130, 115, 77, 0.1),
+          0 26px 58px rgba(88, 78, 55, 0.18),
+          0 0 30px rgba(212, 175, 55, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.88),
+          inset 0 -22px 48px rgba(151, 133, 74, 0.12);
+      }
+
+      .plain-metric::before,
+      .technical-column::before,
+      .site-footer::before,
+      .contact-card::before,
+      .highlight-item::before {
+        background:
+          linear-gradient(115deg, transparent 0 28%, rgba(255, 255, 255, 0.52) 42%, transparent 57%),
+          repeating-linear-gradient(160deg, rgba(128, 119, 91, 0.08) 0 1px, transparent 1px 14px);
+        mix-blend-mode: multiply;
+      }
+
+      .gallery-item {
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .journey-video {
+        border-color: rgba(150, 132, 74, 0.26);
+        background: #f9f6ee;
+        box-shadow:
+          0 22px 64px rgba(88, 78, 55, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.72);
+      }
+
+      #journey,
+      .contact-section {
+        background:
+          radial-gradient(circle at 76% 22%, rgba(212, 175, 55, 0.2), transparent 28%),
+          radial-gradient(circle at 22% 76%, rgba(40, 96, 190, 0.14), transparent 30%),
+          linear-gradient(145deg, #eeeeeb 0%, #ddddda 52%, #c9c9c3);
+      }
+
+      .contact-section::after {
+        background:
+          repeating-linear-gradient(120deg, rgba(128, 119, 91, 0.055) 0 1px, transparent 1px 26px),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(238, 232, 218, 0.48));
+      }
+
+      .contact-map::after {
+        color: rgba(35, 32, 25, 0.82);
+        border-color: rgba(150, 132, 74, 0.16);
+        background: rgba(255, 255, 255, 0.64);
+      }
+
+      .contact-card span,
+      .highlight-label {
+        color: rgba(73, 65, 45, 0.68);
+      }
+
+      .contact-card strong,
+      .contact-card a {
+        color: rgba(31, 29, 23, 0.9);
+      }
+
+      .hero-button.primary {
+        color: #221f16;
+        border-color: rgba(156, 118, 26, 0.38);
+        background: linear-gradient(135deg, #fff7d4, #d7bd64 48%, #a7a39a);
+        box-shadow:
+          0 14px 32px rgba(142, 111, 32, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      }
+
+      .nav-links a {
+        color: #242018;
+        border-color: rgba(88, 78, 54, 0.22);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(212, 175, 55, 0.22) 44%, rgba(142, 142, 136, 0.34)),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(218, 213, 201, 0.36));
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.82),
+          inset 0 -7px 12px rgba(96, 86, 56, 0.16),
+          0 10px 22px rgba(88, 78, 55, 0.18);
+        text-shadow: none;
+      }
+
+      .nav-links a span {
+        color: #242018;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: #111;
+        border-color: rgba(156, 118, 26, 0.4);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(212, 175, 55, 0.32) 48%, rgba(172, 170, 160, 0.42)),
+          rgba(255, 255, 255, 0.62);
+        text-shadow: none;
+      }
+
+      #home .project-highlights {
+        bottom: clamp(28px, 7vh, 72px);
+      }
+
+      .landing-info {
+        position: absolute;
+        top: clamp(112px, 14vh, 150px);
+        left: clamp(0px, 3vw, 42px);
+        z-index: 2;
+        width: min(980px, 68vw);
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+      }
+
+      .landing-info h2 {
+        margin: 0 0 28px;
+        max-width: 13ch;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(4.6rem, 8.2vw, 9.8rem);
+        font-weight: 900;
+        line-height: 0.72;
+        letter-spacing: 0;
+        color: transparent;
+        background:
+          linear-gradient(100deg, #9b988e 0%, #ddd8c1 30%, #8d8a7d 54%, #c4a735 78%, #8f6a12 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-shadow:
+          0 24px 34px rgba(103, 96, 74, 0.2),
+          0 3px 0 rgba(255, 255, 255, 0.66),
+          0 0 42px rgba(212, 175, 55, 0.12);
+      }
+
+      .landing-info p {
+        max-width: 74ch;
+        margin: 0 0 28px;
+        color: rgba(62, 58, 50, 0.9);
+        font-size: clamp(1.34rem, 2.05vw, 2.05rem);
+        font-weight: 500;
+        line-height: 1.72;
+      }
+
+      .landing-info strong {
+        color: #9d741c;
+        font-weight: 900;
+      }
+
+      .landing-info .project-meta {
+        display: none;
+      }
+
+      .landing-info .project-meta > span {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+      }
+
+      .plain-metric:hover,
+      .technical-column:hover,
+      .contact-card:hover,
+      .gallery-item:hover,
+      .video-shell:hover,
+      .site-footer:hover,
+      .contact-map:hover,
+      .highlight-item:hover {
+        border-color: rgba(156, 118, 26, 0.36);
+        box-shadow:
+          16px 24px 0 rgba(130, 115, 77, 0.12),
+          0 30px 72px rgba(88, 78, 55, 0.22),
+          0 0 38px rgba(212, 175, 55, 0.14),
+          inset 0 1px 0 rgba(255, 255, 255, 0.92),
+          inset 0 -24px 52px rgba(151, 133, 74, 0.14);
+      }
+
+      @media (max-width: 680px) {
+        .page-section#home {
+          min-height: max(100vh, 940px);
+        }
+
+        .landing-info {
+          position: absolute;
+          top: 104px;
+          left: 16px;
+          width: min(520px, calc(100% - 32px));
+          margin: 0;
+          padding: 0;
+        }
+
+        .landing-info h2 {
+          margin-bottom: 22px;
+          font-size: clamp(3.2rem, 16vw, 5.6rem);
+        }
+
+        .landing-info p {
+          margin-bottom: 18px;
+          font-size: clamp(1.02rem, 5.4vw, 1.38rem);
+          line-height: 1.62;
+        }
+
+        #home .project-highlights {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          bottom: 28px;
+        }
+
+        #threejs-container-ANIMATION_2,
+        #threejs-container-GOLDEN_SPHERE,
+        #threejs-container-LOCATION_SPHERE,
+        #threejs-container-SILVER_IRIS,
+        #threejs-container-ROTATING_DESIGN,
+        #threejs-container-SUSTAINABILITY_DESIGN,
+        #threejs-container-JOURNEY_IRIS,
+        #threejs-container-CONTACT_IRIS {
+          background:
+            radial-gradient(circle at 54% 42%, rgba(218, 174, 34, 0.26), transparent 36%),
+            radial-gradient(circle at 34% 70%, rgba(40, 96, 190, 0.18), transparent 38%),
+            linear-gradient(145deg, #eeeeeb, #ddddda 50%, #c8c8c1);
+        }
+
+        #threejs-container-ANIMATION_2 canvas,
+        #threejs-container-GOLDEN_SPHERE canvas,
+        #threejs-container-LOCATION_SPHERE canvas,
+        #threejs-container-SILVER_IRIS canvas,
+        #threejs-container-ROTATING_DESIGN canvas,
+        #threejs-container-SUSTAINABILITY_DESIGN canvas,
+        #threejs-container-JOURNEY_IRIS canvas,
+        #threejs-container-CONTACT_IRIS canvas {
+          filter:
+            drop-shadow(0 18px 34px rgba(123, 105, 53, 0.26))
+            drop-shadow(0 0 24px rgba(0, 109, 255, 0.18))
+            contrast(1.22)
+            saturate(1.48);
+          opacity: 0.96;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .page-section#home {
+          min-height: max(100vh, 980px);
+        }
+
+        #home .project-highlights {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
     </style>
   </head>
   <body>
@@ -1299,26 +1686,17 @@
 
     <section class="page-section" id="home" aria-label="Home">
       <div id="threejs-container-ANIMATION_2"></div>
-      <div class="hero-title">
-        <p class="project-kicker">Mata Malika Energy Multiple Private Limited</p>
-        <h1>Malumela Hydroelectric Project</h1>
-        <p class="project-capacity">72 MW Clean Energy Project</p>
-        <p class="project-summary">
-          The Malumela Hydroelectric Project is a 72 MW run-of-river hydropower project planned to harness Nepal's abundant water resources for clean electricity generation. With an estimated annual energy production of 448.35 GWh, the project aims to contribute significantly to national power supply, economic development, and sustainable infrastructure growth.
+      <div class="landing-info" aria-label="Project introduction">
+        <h2>About the Project</h2>
+        <p>
+          The <strong>Malumela Seti Nadi Peaking Hydroelectric Project</strong> is a strategically important renewable energy project planned to strengthen Nepal's power generation capacity. With an installed capacity of <strong>72 MW</strong>, it harnesses the Seti River to produce clean and sustainable electricity for households, industries, and businesses.
         </p>
-        <div class="project-meta" aria-label="Project facts">
-          <span>
-            <strong>Location:</strong>
-            <span class="location-list" aria-label="Project location">
-              <span>Thalara</span>
-              <span>Bajhang District</span>
-            </span>
-          </span>
-          <span><strong>Installed Capacity:</strong> 72 MW</span>
-        </div>
-        <div class="hero-actions" aria-label="Project actions">
-          <a class="hero-button primary" href="#about">View Project Details</a>
-        </div>
+        <p>
+          Designed as a <strong>Peaking Run-of-River (PROR)</strong> scheme with <strong>4-hour peaking storage</strong>, the project stores water during lower-demand periods and releases it when electricity demand is highest. This improves grid reliability while making better use of Nepal's hydropower resources.
+        </p>
+        <p>
+          The project is expected to generate about <strong>448.35 GWh annually</strong>, using a <strong>115 m gross head</strong> and <strong>102 m rated net head</strong>. Power will be evacuated through a <strong>132 kV transmission connection</strong>, with a planned construction period of four years and a projected payback period of twelve years.
+        </p>
       </div>
       <div class="project-highlights" aria-label="Key Project Highlights">
         <div class="highlight-item">
@@ -1681,49 +2059,87 @@
         const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
+        scene.background = new THREE.Color(0xd7d7d3);
         camera.position.set(isMobileScene ? 0.45 : 0, isMobileScene ? 0.15 : 0, isMobileScene ? 7.2 : 6);
         renderer.setSize(width, height);
         renderer.setPixelRatio(renderPixelRatio);
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.28;
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         container.appendChild(renderer.domElement);
 
-        const ambientLight = new THREE.AmbientLight(0xffffff, isMobileScene ? 0.36 : 0.2);
+        const envCanvas = document.createElement("canvas");
+        envCanvas.width = 512;
+        envCanvas.height = 256;
+        const envContext = envCanvas.getContext("2d");
+        const envGradient = envContext.createLinearGradient(0, 0, 512, 256);
+        envGradient.addColorStop(0, "#fffdf5");
+        envGradient.addColorStop(0.24, "#c9bea0");
+        envGradient.addColorStop(0.5, "#ffffff");
+        envGradient.addColorStop(0.74, "#8b877d");
+        envGradient.addColorStop(1, "#eee7d7");
+        envContext.fillStyle = envGradient;
+        envContext.fillRect(0, 0, 512, 256);
+        envContext.fillStyle = "rgba(255,255,255,0.82)";
+        envContext.fillRect(24, 22, 150, 34);
+        envContext.fillStyle = "rgba(160,145,112,0.55)";
+        envContext.fillRect(282, 154, 196, 26);
+        envContext.fillStyle = "rgba(95,92,84,0.45)";
+        envContext.fillRect(360, 58, 118, 44);
+        const envTexture = new THREE.CanvasTexture(envCanvas);
+        envTexture.mapping = THREE.EquirectangularReflectionMapping;
+        envTexture.colorSpace = THREE.SRGBColorSpace;
+        scene.environment = envTexture;
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, isMobileScene ? 0.28 : 0.16);
         scene.add(ambientLight);
 
-        const mainLight = new THREE.SpotLight(0xffffff, isMobileScene ? 7 : 5);
+        const mainLight = new THREE.SpotLight(0xffffff, isMobileScene ? 9 : 6.8);
         mainLight.position.set(10, 20, 10);
-        mainLight.penumbra = 0.5;
+        mainLight.penumbra = 0.32;
+        mainLight.castShadow = true;
+        mainLight.shadow.mapSize.width = isMobileScene ? 512 : 1024;
+        mainLight.shadow.mapSize.height = isMobileScene ? 512 : 1024;
         scene.add(mainLight);
 
-        const topLight = new THREE.PointLight(0xffffff, isMobileScene ? 20 : 15, 50);
-        topLight.position.set(0, 10, 5);
+        const topLight = new THREE.PointLight(0xffffff, isMobileScene ? 26 : 18, 50);
+        topLight.position.set(0, 10, 6);
         scene.add(topLight);
 
-        const warmAccent = new THREE.PointLight(0xffaa44, isMobileScene ? 28 : 20, 30);
-        warmAccent.position.set(-8, -5, 10);
+        const warmAccent = new THREE.PointLight(0xffd067, isMobileScene ? 36 : 28, 34);
+        warmAccent.position.set(-8, -5, 11);
         scene.add(warmAccent);
 
-        const ironRim = new THREE.PointLight(0xb7b7b0, 9, 28);
-        ironRim.position.set(8, 5, 5);
+        const ironRim = new THREE.PointLight(0xf4efe0, isMobileScene ? 18 : 14, 32);
+        ironRim.position.set(8, 5, 7);
         scene.add(ironRim);
+
+        const goldenCore = new THREE.PointLight(0xffc84a, isMobileScene ? 16 : 12, 24);
+        goldenCore.position.set(isMobileScene ? 0.25 : offsetX, -0.4, 1.2);
+        scene.add(goldenCore);
 
         const textureCanvas = document.createElement("canvas");
         textureCanvas.width = 256;
         textureCanvas.height = 256;
         const context = textureCanvas.getContext("2d");
-        context.fillStyle = "#888888";
+        context.fillStyle = "#d9c887";
         context.fillRect(0, 0, 256, 256);
-        context.strokeStyle = "#ffffff";
-        context.lineWidth = 4;
+        context.strokeStyle = "#fff4c8";
+        context.lineWidth = 5;
 
         for (let x = 0; x < 256; x += 16) {
           context.beginPath();
           context.moveTo(x, 0);
           context.lineTo(x + 16, 256);
           context.stroke();
+          context.strokeStyle = x % 32 === 0 ? "#b2a06f" : "#d7d5ce";
           context.beginPath();
           context.moveTo(x + 16, 0);
           context.lineTo(x, 256);
           context.stroke();
+          context.strokeStyle = "#fff9dc";
         }
 
         const braidTexture = new THREE.CanvasTexture(textureCanvas);
@@ -1732,79 +2148,216 @@
         braidTexture.repeat.set(10, 1);
 
         const goldMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xffd700,
-          metalness: 1,
-          roughness: 0.15,
+          color: 0xb8aa7c,
+          emissive: 0x211b0c,
+          emissiveIntensity: 0.08,
+          metalness: 0.82,
+          roughness: 0.16,
           bumpMap: braidTexture,
-          bumpScale: 0.02,
-          clearcoat: 0.2,
-          clearcoatRoughness: 0.1,
+          bumpScale: 0.026,
+          transparent: true,
+          opacity: 0.9,
+          transmission: 0.08,
+          thickness: 0.7,
+          ior: 1.48,
+          attenuationColor: 0xd5c38f,
+          attenuationDistance: 2.4,
+          clearcoat: 0.62,
+          clearcoatRoughness: 0.08,
+          reflectivity: 1,
+          envMapIntensity: 2.35,
+          specularIntensity: 1,
+          specularColor: 0xfff7df,
         });
 
         const silverMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xf0f0f0,
-          metalness: 1,
-          roughness: 0.12,
+          color: 0xd9dad4,
+          emissive: 0x070808,
+          emissiveIntensity: 0.035,
+          metalness: 0.96,
+          roughness: 0.105,
           bumpMap: braidTexture,
-          bumpScale: 0.02,
-          clearcoat: 0.2,
-          clearcoatRoughness: 0.1,
-        });
-
-        const glassMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xffffff,
-          metalness: 0,
-          roughness: 0,
-          transmission: 1,
-          thickness: 1.5,
-          ior: 1.5,
+          bumpScale: 0.03,
           transparent: true,
-          opacity: 0.5,
+          opacity: 0.94,
+          transmission: 0.04,
+          thickness: 0.55,
+          ior: 1.45,
+          attenuationColor: 0xf0f1ed,
+          attenuationDistance: 3.2,
+          clearcoat: 0.72,
+          clearcoatRoughness: 0.06,
+          reflectivity: 1,
+          envMapIntensity: 2.75,
+          specularIntensity: 1,
+          specularColor: 0xffffff,
         });
 
-        const diamondMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xffffff,
-          metalness: 0,
-          roughness: 0,
-          transmission: 1,
-          thickness: 2.5,
-          ior: 2.4,
+        const goldCoreMaterial = new THREE.MeshPhysicalMaterial({
+          color: 0x8f8057,
+          emissive: 0x171209,
+          emissiveIntensity: 0.08,
+          metalness: 1,
+          roughness: 0.22,
+          clearcoat: 0.58,
+          clearcoatRoughness: 0.09,
+          envMapIntensity: 2,
+        });
+
+        const silverCoreMaterial = new THREE.MeshPhysicalMaterial({
+          color: 0xbec0bb,
+          emissive: 0x050606,
+          emissiveIntensity: 0.04,
+          metalness: 1,
+          roughness: 0.14,
+          clearcoat: 0.72,
+          clearcoatRoughness: 0.06,
+          envMapIntensity: 2.35,
+          specularIntensity: 1,
+          specularColor: 0xffffff,
+        });
+
+        const glintMaterial = new THREE.MeshBasicMaterial({
+          color: 0xf8df83,
           transparent: true,
-          opacity: 0.7,
-          clearcoat: 1,
+          opacity: 0.78,
         });
 
-        const materials = [goldMaterial, silverMaterial, glassMaterial, diamondMaterial];
-        const cables = new THREE.Group();
-        cables.position.x = isMobileScene ? 0.25 : offsetX;
-        cables.scale.setScalar(isMobileScene ? 0.86 : 1);
-        const cableCount = isMobileScene ? 14 : 14;
+        const particleCount = isMobileScene ? 1200 : 2200;
+        const particleGeometry = new THREE.BufferGeometry();
+        const particlePositions = new Float32Array(particleCount * 3);
+        const particleColors = new Float32Array(particleCount * 3);
+        const particleGold = new THREE.Color("#e0a000");
+        const particleBlue = new THREE.Color("#0047ff");
+        const particleWhite = new THREE.Color("#ffffff");
 
-        for (let i = 0; i < cableCount; i += 1) {
-          const points = [];
-          const heightScale = isMobileScene ? 10.8 : 12;
-          const curveRadius = (isMobileScene ? 0.92 : 0.8) + i * 0.05;
+        for (let i = 0; i < particleCount; i += 1) {
+          const theta = Math.random() * Math.PI * 2;
+          const phi = Math.acos(2 * Math.random() - 1);
+          const radius = (isMobileScene ? 2.35 : 2.85) + (Math.random() - 0.5) * 0.42;
+          const colorRoll = Math.random();
+          const color = colorRoll > 0.72 ? particleGold : colorRoll > 0.22 ? particleBlue : particleWhite;
 
-          for (let j = 0; j < 12; j += 1) {
-            const angle = (j / 12) * Math.PI * 2 + i * 0.4;
-            points.push(
-              new THREE.Vector3(
-                Math.cos(angle) * curveRadius,
-                j * (heightScale / 12) - heightScale / 2,
-                Math.sin(angle) * curveRadius,
-              ),
-            );
-          }
-
-          const curve = new THREE.CatmullRomCurve3(points);
-          const geometry = new THREE.TubeGeometry(curve, 56, isMobileScene ? 0.075 : 0.06, 8, false);
-          const cable = new THREE.Mesh(geometry, materials[i % materials.length]);
-
-          cable.userData.rotationSpeed = 0.001 + Math.random() * 0.002;
-          cables.add(cable);
+          particlePositions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+          particlePositions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+          particlePositions[i * 3 + 2] = radius * Math.cos(phi);
+          particleColors[i * 3] = color.r;
+          particleColors[i * 3 + 1] = color.g;
+          particleColors[i * 3 + 2] = color.b;
         }
 
-        scene.add(cables);
+        particleGeometry.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
+        particleGeometry.setAttribute("color", new THREE.BufferAttribute(particleColors, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+          size: isMobileScene ? 0.052 : 0.046,
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.94,
+          blending: THREE.NormalBlending,
+          depthWrite: false,
+        });
+
+        const particleSphere = new THREE.Points(particleGeometry, particleMaterial);
+        particleSphere.position.set(isMobileScene ? 0.35 : offsetX, isMobileScene ? -0.1 : 0, -0.45);
+        particleSphere.scale.setScalar(isMobileScene ? 0.86 : 1.04);
+        scene.add(particleSphere);
+
+        const irisGroup = new THREE.Group();
+        irisGroup.position.set(isMobileScene ? 0.35 : offsetX, isMobileScene ? -0.1 : 0, 0);
+        irisGroup.scale.setScalar(isMobileScene ? 0.92 : 1.08);
+
+        const fiberMaterials = [silverMaterial, goldMaterial, silverCoreMaterial, goldCoreMaterial];
+        const fiberCount = isMobileScene ? 148 : 210;
+        const innerRadius = isMobileScene ? 0.92 : 1.05;
+
+        for (let i = 0; i < fiberCount; i += 1) {
+          const angle = (i / fiberCount) * Math.PI * 2;
+          const wave = Math.sin(i * 2.41) * 0.12 + Math.cos(i * 0.77) * 0.08;
+          const length = (isMobileScene ? 0.72 : 0.9) + Math.random() * 0.52 + Math.max(0, wave);
+          const radius = (isMobileScene ? 0.012 : 0.015) + Math.random() * 0.012;
+          const centerRadius = innerRadius + length * 0.5 + Math.random() * 0.08;
+          const geometry = new THREE.CylinderGeometry(radius * 0.45, radius, length, 7, 1, true);
+          const material = fiberMaterials[i % fiberMaterials.length];
+          const fiber = new THREE.Mesh(geometry, material);
+
+          fiber.position.set(
+            Math.cos(angle) * centerRadius,
+            Math.sin(angle) * centerRadius,
+            (Math.random() - 0.5) * 0.42,
+          );
+          fiber.rotation.z = angle - Math.PI / 2 + (Math.random() - 0.5) * 0.22;
+          fiber.rotation.x = (Math.random() - 0.5) * 0.28;
+          fiber.rotation.y = (Math.random() - 0.5) * 0.18;
+          fiber.castShadow = true;
+          fiber.receiveShadow = true;
+          fiber.userData.baseScale = 0.88 + Math.random() * 0.24;
+          fiber.userData.phase = Math.random() * Math.PI * 2;
+          fiber.userData.baseZ = fiber.position.z;
+          irisGroup.add(fiber);
+
+          if (i % 4 === 0) {
+            const beadGeometry = new THREE.SphereGeometry(radius * 2.35, 10, 8);
+            const bead = new THREE.Mesh(beadGeometry, i % 8 === 0 ? goldMaterial : silverMaterial);
+            bead.position.set(
+              Math.cos(angle) * (innerRadius + length + 0.06),
+              Math.sin(angle) * (innerRadius + length + 0.06),
+              fiber.position.z + 0.02,
+            );
+            bead.castShadow = true;
+            bead.userData.phase = fiber.userData.phase;
+            bead.userData.baseZ = bead.position.z;
+            irisGroup.add(bead);
+          }
+        }
+
+        const innerGlow = new THREE.Mesh(
+          new THREE.TorusGeometry(innerRadius * 0.96, 0.028, 10, 128),
+          new THREE.MeshBasicMaterial({
+            color: 0xf6e3a6,
+            transparent: true,
+            opacity: 0.34,
+          }),
+        );
+        irisGroup.add(innerGlow);
+
+        const closeBundle = new THREE.Group();
+        closeBundle.position.set(isMobileScene ? 1.3 : offsetX + 0.55, isMobileScene ? 1.55 : 1.35, 0.42);
+        closeBundle.rotation.z = -0.48;
+        closeBundle.rotation.x = 0.18;
+        closeBundle.scale.setScalar(isMobileScene ? 0.58 : 0.72);
+        const closeBundleBaseY = closeBundle.position.y;
+
+        for (let i = 0; i < 12; i += 1) {
+          const side = (i - 5.5) * 0.052;
+          const material = i % 3 === 0 ? goldMaterial : silverMaterial;
+          const points = [
+            new THREE.Vector3(side, 1.05, -0.12 + i * 0.014),
+            new THREE.Vector3(side * 0.75 + Math.sin(i) * 0.08, 0.45, 0.08),
+            new THREE.Vector3(side * 0.35, -0.22, 0.12),
+            new THREE.Vector3(side * 0.12, -0.82, 0.02),
+          ];
+          const curve = new THREE.CatmullRomCurve3(points);
+          const tube = new THREE.Mesh(
+            new THREE.TubeGeometry(curve, 64, isMobileScene ? 0.028 : 0.034, 14, false),
+            material,
+          );
+          tube.castShadow = true;
+          tube.receiveShadow = true;
+          closeBundle.add(tube);
+
+          const tip = new THREE.Mesh(
+            new THREE.SphereGeometry(isMobileScene ? 0.045 : 0.055, 16, 10),
+            i % 3 === 0 ? goldMaterial : silverMaterial,
+          );
+          tip.position.copy(points[3]);
+          tip.position.y -= 0.04 + Math.random() * 0.04;
+          tip.castShadow = true;
+          closeBundle.add(tip);
+        }
+
+        scene.add(irisGroup);
+        scene.add(closeBundle);
 
         const sparkCount = isMobileScene ? 70 : 80;
         const sparks = new THREE.Group();
@@ -1812,7 +2365,7 @@
         const sparkGeometry = new THREE.OctahedronGeometry(isMobileScene ? 0.026 : 0.02, 0);
 
         for (let i = 0; i < sparkCount; i += 1) {
-          const spark = new THREE.Mesh(sparkGeometry, diamondMaterial);
+          const spark = new THREE.Mesh(sparkGeometry, glintMaterial);
           spark.position.set(
             (Math.random() - 0.5) * 15,
             (Math.random() - 0.5) * 15,
@@ -1826,12 +2379,19 @@
         function animateInnerScene() {
           const time = Date.now() * 0.0005;
 
-          cables.children.forEach((cable, index) => {
-            cable.rotation.y = time * cable.userData.rotationSpeed * (index % 2 === 0 ? 1 : -1);
-            cable.position.y = Math.sin(time + index) * 0.08;
+          irisGroup.children.forEach((fiber, index) => {
+            const pulse = 1 + Math.sin(time * 2.8 + (fiber.userData.phase || index)) * 0.055;
+            fiber.scale.y = fiber.userData.baseScale ? fiber.userData.baseScale * pulse : pulse;
+            fiber.position.z = (fiber.userData.baseZ || 0) + Math.sin(time + index) * 0.025;
           });
 
-          cables.rotation.y += 0.001;
+          irisGroup.rotation.z += 0.0014;
+          irisGroup.rotation.y = Math.sin(time * 0.8) * 0.07;
+          closeBundle.rotation.y = Math.sin(time * 1.1) * 0.08;
+          closeBundle.position.y = closeBundleBaseY + Math.sin(time * 1.5) * 0.045;
+          particleSphere.rotation.y += 0.002;
+          particleSphere.rotation.x += 0.0008;
+          particleSphere.scale.setScalar((isMobileScene ? 0.86 : 1.04) * (1 + Math.sin(time * 1.8) * 0.065));
 
           sparks.children.forEach((spark) => {
             spark.rotation.x += 0.02;
@@ -1855,7 +2415,9 @@
         runWhenVisible(container, animateInnerScene);
       }
 
-      createBraidedInnerScene("threejs-container-ANIMATION_2", window.innerWidth < 760 ? 0.25 : 3.25);
+      const referenceIrisOffset = () => (window.innerWidth < 760 ? 0.35 : 3.25);
+
+      createBraidedInnerScene("threejs-container-ANIMATION_2", referenceIrisOffset());
 
       function createGoldenParticleSphere(containerId, offsetX = 0) {
         const container = document.getElementById(containerId);
@@ -1874,8 +2436,8 @@
         const geometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
-        const goldColor = new THREE.Color("#d4af37");
-        const whiteColor = new THREE.Color("#ffffff");
+        const goldColor = new THREE.Color("#b98c1f");
+        const whiteColor = new THREE.Color("#6f6c63");
 
         for (let i = 0; i < particleCount; i += 1) {
           const theta = Math.random() * Math.PI * 2;
@@ -1930,8 +2492,7 @@
       }
 
       initSceneWhenNear("threejs-container-GOLDEN_SPHERE", () => {
-        const aboutSphereOffset = window.innerWidth < 760 ? 0.65 : 7.2;
-        createGoldenParticleSphere("threejs-container-GOLDEN_SPHERE", aboutSphereOffset);
+        createBraidedInnerScene("threejs-container-GOLDEN_SPHERE", referenceIrisOffset());
       });
 
       function createSilverIrisScene(containerId, offsetX = 0) {
@@ -1943,7 +2504,7 @@
         const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
-        scene.background = new THREE.Color(0x030303);
+        scene.background = new THREE.Color(0xf6f2e8);
         camera.position.set(isMobileScene ? 0.25 : 0, 0.15, isMobileScene ? 5.8 : 5.2);
         renderer.setSize(width, height);
         renderer.setPixelRatio(isMobileScene ? 0.85 : 1);
@@ -1986,7 +2547,7 @@
         scene.add(eyeGroup);
 
         const silverMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0xb9b8b3,
+          color: 0xc7c4ba,
           metalness: 1,
           roughness: 0.26,
           clearcoat: 0.45,
@@ -1995,7 +2556,7 @@
         });
 
         const darkSilverMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0x111210,
+          color: 0x6e6b63,
           metalness: 1,
           roughness: 0.34,
           clearcoat: 0.18,
@@ -2004,7 +2565,7 @@
         });
 
         const ironEdgeMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0x343431,
+          color: 0x8c887d,
           metalness: 1,
           roughness: 0.3,
           clearcoat: 0.25,
@@ -2149,19 +2710,19 @@
       }
 
       initSceneWhenNear("threejs-container-SILVER_IRIS", () => {
-        createSilverIrisScene("threejs-container-SILVER_IRIS");
+        createBraidedInnerScene("threejs-container-SILVER_IRIS", referenceIrisOffset());
       });
 
       initSceneWhenNear("threejs-container-LOCATION_SPHERE", () => {
-        createSilverIrisScene("threejs-container-LOCATION_SPHERE", 0);
+        createBraidedInnerScene("threejs-container-LOCATION_SPHERE", referenceIrisOffset());
       });
 
       initSceneWhenNear("threejs-container-JOURNEY_IRIS", () => {
-        createSilverIrisScene("threejs-container-JOURNEY_IRIS", 0);
+        createBraidedInnerScene("threejs-container-JOURNEY_IRIS", referenceIrisOffset());
       });
 
       initSceneWhenNear("threejs-container-CONTACT_IRIS", () => {
-        createSilverIrisScene("threejs-container-CONTACT_IRIS", 0);
+        createBraidedInnerScene("threejs-container-CONTACT_IRIS", referenceIrisOffset());
       });
 
       function createRotatingTurbineScene(containerId) {
@@ -2173,7 +2734,7 @@
         const camera = new THREE.PerspectiveCamera(isMobileScene ? 52 : 45, width / height, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-        scene.background = new THREE.Color(0x050505);
+        scene.background = new THREE.Color(0xf6f2e8);
         camera.position.set(isMobileScene ? 3.1 : 4, isMobileScene ? 1.7 : 2, isMobileScene ? 7.4 : 5);
         camera.lookAt(isMobileScene ? 0.45 : 0, 0, 0);
 
@@ -2200,7 +2761,7 @@
 
         const turbineGroup = new THREE.Group();
         const metalMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0x888888,
+          color: 0xb9b6ad,
           metalness: 1,
           roughness: 0.25,
           reflectivity: 0.8,
@@ -2208,7 +2769,7 @@
           clearcoatRoughness: 0.1,
         });
         const darkMetalMaterial = new THREE.MeshPhysicalMaterial({
-          color: 0x333333,
+          color: 0x8c887f,
           metalness: 0.9,
           roughness: 0.4,
         });
@@ -2281,11 +2842,11 @@
       }
 
       initSceneWhenNear("threejs-container-ROTATING_DESIGN", () => {
-        createRotatingTurbineScene("threejs-container-ROTATING_DESIGN");
+        createBraidedInnerScene("threejs-container-ROTATING_DESIGN", referenceIrisOffset());
       });
 
       initSceneWhenNear("threejs-container-SUSTAINABILITY_DESIGN", () => {
-        createRotatingTurbineScene("threejs-container-SUSTAINABILITY_DESIGN");
+        createBraidedInnerScene("threejs-container-SUSTAINABILITY_DESIGN", referenceIrisOffset());
       });
     </script>
   </body>
