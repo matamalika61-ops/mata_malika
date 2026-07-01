@@ -2119,50 +2119,6 @@
         }
       }
 
-      body.home-active .nav-links a {
-        animation: landingButtonFloat 5.2s ease-in-out infinite;
-      }
-
-      body.home-active .nav-links a:nth-child(2) {
-        animation-duration: 6.1s;
-        animation-delay: -1.4s;
-      }
-
-      body.home-active .nav-links a:nth-child(3) {
-        animation-duration: 5.7s;
-        animation-delay: -2.6s;
-      }
-
-      body.home-active .nav-links a:nth-child(4) {
-        animation-duration: 6.6s;
-        animation-delay: -0.8s;
-      }
-
-      body.home-active .nav-links a:nth-child(5) {
-        animation-duration: 5.4s;
-        animation-delay: -3.2s;
-      }
-
-      body.home-active .nav-links a:nth-child(6) {
-        animation-duration: 6.9s;
-        animation-delay: -2s;
-      }
-
-      body:not(.home-active) .nav-links a {
-        animation: none;
-      }
-
-      @keyframes landingButtonFloat {
-        0%,
-        100% {
-          transform: perspective(800px) rotateX(4deg) rotateY(-3deg) translateY(0) translateZ(0);
-        }
-
-        50% {
-          transform: perspective(800px) rotateX(9deg) rotateY(5deg) translateY(-14px) translateZ(18px);
-        }
-      }
-
       .nav-links a {
         min-height: clamp(44px, 4.2vw, 58px);
         padding: 0 clamp(16px, 2vw, 28px);
@@ -2353,56 +2309,56 @@
       }
 
       body.home-active .nav-links a:nth-child(1) {
-        top: 5%;
-        left: 6%;
-        animation-duration: 7.2s;
-        --float-x: 28vw;
-        --float-y: 18vh;
+        top: 4%;
+        left: 4%;
+        animation-duration: 8.6s;
+        --float-x: 62vw;
+        --float-y: 36vh;
       }
 
       body.home-active .nav-links a:nth-child(2) {
-        top: 7%;
-        right: 10%;
-        animation-duration: 8.4s;
+        top: 6%;
+        right: 6%;
+        animation-duration: 9.4s;
         animation-delay: -2.1s;
-        --float-x: -34vw;
-        --float-y: 24vh;
+        --float-x: -58vw;
+        --float-y: 42vh;
       }
 
       body.home-active .nav-links a:nth-child(3) {
-        top: 32%;
-        left: 4%;
-        animation-duration: 9.1s;
+        top: 44%;
+        left: 5%;
+        animation-duration: 10.2s;
         animation-delay: -3.4s;
-        --float-x: 38vw;
-        --float-y: -18vh;
+        --float-x: 56vw;
+        --float-y: -34vh;
       }
 
       body.home-active .nav-links a:nth-child(4) {
-        top: 36%;
+        top: 48%;
         right: 5%;
-        animation-duration: 8.8s;
+        animation-duration: 10.6s;
         animation-delay: -1.2s;
-        --float-x: -32vw;
-        --float-y: 20vh;
+        --float-x: -54vw;
+        --float-y: 30vh;
       }
 
       body.home-active .nav-links a:nth-child(5) {
-        bottom: 18%;
-        left: 12%;
-        animation-duration: 7.8s;
+        bottom: 10%;
+        left: 8%;
+        animation-duration: 9.2s;
         animation-delay: -4.2s;
-        --float-x: 34vw;
-        --float-y: -16vh;
+        --float-x: 54vw;
+        --float-y: -46vh;
       }
 
       body.home-active .nav-links a:nth-child(6) {
-        bottom: 16%;
-        right: 12%;
-        animation-duration: 9.6s;
+        bottom: 8%;
+        right: 8%;
+        animation-duration: 11s;
         animation-delay: -2.7s;
-        --float-x: -36vw;
-        --float-y: -22vh;
+        --float-x: -58vw;
+        --float-y: -42vh;
       }
 
       @keyframes landingButtonOrbit {
@@ -2432,55 +2388,67 @@
       }
 
       #home .project-highlights {
-        top: clamp(700px, 74vh, 780px);
-        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        top: clamp(620px, 66vh, 700px);
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        align-items: stretch;
       }
 
-      #home .highlight-item:nth-child(n + 4) {
+      #home .highlight-item:nth-child(n + 3) {
         display: none;
+      }
+
+      #home .highlight-item {
+        min-height: 250px;
+        transform: perspective(1100px) rotateX(7deg) rotateY(-5deg) skewX(-0.8deg) translateZ(20px);
+        box-shadow:
+          22px 28px 0 rgba(130, 115, 77, 0.12),
+          0 42px 80px rgba(88, 78, 55, 0.22),
+          0 0 34px rgba(212, 175, 55, 0.16),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9),
+          inset 0 -26px 54px rgba(151, 133, 74, 0.14);
       }
 
       @media (max-width: 900px) {
         body.home-active .nav-links a:nth-child(1) {
           top: 3%;
           left: 5%;
-          --float-x: 36vw;
-          --float-y: 14vh;
+          --float-x: 58vw;
+          --float-y: 22vh;
         }
 
         body.home-active .nav-links a:nth-child(2) {
           top: 9%;
           right: 5%;
-          --float-x: -32vw;
-          --float-y: 18vh;
+          --float-x: -56vw;
+          --float-y: 28vh;
         }
 
         body.home-active .nav-links a:nth-child(3) {
           top: 28%;
           left: 5%;
-          --float-x: 26vw;
-          --float-y: -14vh;
+          --float-x: 50vw;
+          --float-y: -22vh;
         }
 
         body.home-active .nav-links a:nth-child(4) {
           top: 34%;
           right: 5%;
-          --float-x: -24vw;
-          --float-y: 16vh;
+          --float-x: -48vw;
+          --float-y: 24vh;
         }
 
         body.home-active .nav-links a:nth-child(5) {
           bottom: 22%;
           left: 7%;
-          --float-x: 28vw;
-          --float-y: -12vh;
+          --float-x: 50vw;
+          --float-y: -26vh;
         }
 
         body.home-active .nav-links a:nth-child(6) {
           bottom: 18%;
           right: 7%;
-          --float-x: -26vw;
-          --float-y: -14vh;
+          --float-x: -52vw;
+          --float-y: -28vh;
         }
 
         #home .landing-info {
@@ -2489,7 +2457,7 @@
         }
 
         #home .project-highlights {
-          top: 760px;
+          top: 720px;
           grid-template-columns: 1fr;
         }
       }
@@ -2504,7 +2472,7 @@
         }
 
         #home .project-highlights {
-          top: 820px;
+          top: 780px;
         }
       }
 
@@ -2968,8 +2936,8 @@
       })();
 
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const renderPixelRatio = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 0.9 : 1.1);
-      const targetFrameInterval = reducedMotion ? 1000 / 12 : 1000 / 24;
+      const renderPixelRatio = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 0.85 : 1);
+      const targetFrameInterval = reducedMotion ? 1000 / 12 : 1000 / 22;
 
       function runWhenVisible(container, renderFrame) {
         let active = false;
@@ -3235,7 +3203,7 @@
           opacity: 0.78,
         });
 
-        const particleCount = isMobileScene ? 850 : 1600;
+        const particleCount = isMobileScene ? 700 : 1300;
         const particleGeometry = new THREE.BufferGeometry();
         const particlePositions = new Float32Array(particleCount * 3);
         const particleColors = new Float32Array(particleCount * 3);
@@ -3482,7 +3450,7 @@
         scene.add(irisGroup);
         scene.add(closeBundle);
 
-        const sparkCount = isMobileScene ? 42 : 56;
+        const sparkCount = isMobileScene ? 32 : 44;
         const sparks = new THREE.Group();
         sparks.position.x = isMobileScene ? 0.25 : offsetX;
         const sparkGeometry = new THREE.OctahedronGeometry(isMobileScene ? 0.026 : 0.02, 0);
